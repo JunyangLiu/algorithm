@@ -1,0 +1,44 @@
+package tree;
+
+import org.junit.Test;
+/*
+ * 重建二叉树
+ */
+public class RebuildTree105{
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+    	if(preorder.length==0||inorder.length==0){
+    		return null;
+    	}
+        TreeNode node=new TreeNode(preorder[0]);
+        int i=0;
+        for(;i<inorder.length;i++){
+        	if(preorder[0]==inorder[i]){
+        		break;
+        	}	
+        }    
+        System.out.println(i);
+        node.left=buildTree(copyArray(preorder, 1, i), copyArray(inorder, 0, i));
+        node.right=buildTree(copyArray(preorder, i+1, preorder.length-1), copyArray(inorder, i+1, inorder.length-1));
+        return node;
+    }
+    
+    public int[] copyArray(int [] array,int start,int end){
+    	int[]newArray=new int[end-start+1];
+    	for(int i=0;i<(end-start+1);i++){
+    		newArray[i]=array[start+i];
+    	}
+		return newArray;
+    	
+    }
+	   @Test
+	   public void test(){
+		   int[] preorder={1,2,4,5,3,6,7};
+		   int[] inorder={4,2,5,1,6,3,7};
+		   System.out.println(preorder.length);
+		   BinaryTreeHelper.preorderPrintTree(buildTree(preorder, inorder));
+		   System.out.println();
+		   BinaryTreeHelper.InorderPrintTree(buildTree(preorder, inorder));
+		   System.out.println();
+		   BinaryTreeHelper.posorderPrintTree(buildTree(preorder, inorder));
+	   }
+}

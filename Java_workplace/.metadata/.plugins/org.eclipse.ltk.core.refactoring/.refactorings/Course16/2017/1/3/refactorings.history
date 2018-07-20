@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;CreateBinaryTree.java&apos; to &apos;算法/src/tree&apos;&#x0D;&#x0A;- Original project: &apos;Course16&apos;&#x0D;&#x0A;- Destination element: &apos;算法/src/tree&apos;&#x0D;&#x0A;- Original element: &apos;com.jikexueyuan.two.CreateBinaryTree.java&apos;" description="Copy compilation unit" destination="=算法/src&lt;tree" element1="/src&lt;com.jikexueyuan.two{CreateBinaryTree.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1484528001601" units="1" version="1.0"/>
+</session>
